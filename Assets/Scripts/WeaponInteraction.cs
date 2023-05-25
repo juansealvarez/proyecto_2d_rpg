@@ -6,9 +6,10 @@ public class WeaponInteraction : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.CompareTag("enemy"))
+        if(col.CompareTag("enemy"))
         {
             GameManager.Instance.EnemyDamage();
+            col.GetComponent<EnemyController>().damaged();
         }
     }
 }
