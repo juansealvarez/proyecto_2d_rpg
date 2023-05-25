@@ -186,6 +186,7 @@ MonoBehaviour:
   WakeDistance: 3
   Speed: 3
   AttackDistance: 1
+  EnemyHealth: 2
   Player: {fileID: 0}
 --- !u!95 &8070509649690421669
 Animator:

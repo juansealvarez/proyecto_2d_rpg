@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     public float Speed = 2f;
     public float AttackDistance = 1f;
 
-    private float EnemyHealth = 4f;
+    public float EnemyHealth = 4f;
 
     #endregion
 
@@ -47,18 +47,18 @@ public class EnemyController : MonoBehaviour
     public void damaged(){
         if (PlayerMovement.usingSword)
         {
-            EnemyHealth -= 1f; // El problema es que se aplica a todos los enemigos
+            EnemyHealth -= 1f; 
             Debug.Log("-1 de vida");
         }else
         {
-            EnemyHealth -= 2f; // El problema es que se aplica a todos los enemigos
+            EnemyHealth -= 2f;
             Debug.Log("-2 de vida");
         }
 
         if (EnemyHealth <= 0f)
         {
             Debug.Log("Enemigo Abatido");
-            Destroy(this.gameObject); // El problema es que se aplica a todos los enemigos
+            Destroy(this.gameObject);
             GameManager.Instance.EnemyKilled();
         }
     }

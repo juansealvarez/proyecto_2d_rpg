@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { private set; get; }
     public event EventHandler OnPlayerDamage;
     public event EventHandler AllGone;
-    public float PlayerHealth = 100f;
+    private float PlayerHealth = 100f;
     
 
     private void Awake()
