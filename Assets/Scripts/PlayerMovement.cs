@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private Animator mAnimator;
     private PlayerInput mPlayerInput;
     private Transform hitBox;
+    private bool usingSword = true;
+    public GameObject SwordGUI;
+    public GameObject GunGUI;
 
     private void Start()
     {
@@ -25,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         hitBox = transform.Find("HitBox");
 
         ConversationManager.Instance.OnConversationStop += OnConversationStopDelegate;
+        //inicializar SwordGUI y GunGUI
     }
 
     private void OnConversationStopDelegate()
@@ -43,6 +47,26 @@ public class PlayerMovement : MonoBehaviour
         {
             // Quieto
             mAnimator.SetBool("IsMoving", false);
+        }
+        
+        if(Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            if (usingSword){
+                usingSword = false;
+            }else
+            {
+                usingSword = true;
+            }
+        }
+
+        if (usingSword)
+        {
+            SwordGUI.gameObject.SetActive(true);
+            GunGUI.gameObject.SetActive(false);
+        }else
+        {
+            SwordGUI.gameObject.SetActive(false);
+            GunGUI.gameObject.SetActive(true);
         }
     }
 
@@ -78,8 +102,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (value.isPressed)
         {
-            mAnimator.SetTrigger("Attack");
-            hitBox.gameObject.SetActive(true);
+            if (usingSword)
+            {
+                mAnimator.SetTrigger("Attack");
+                hitBox.gameObject.SetActive(true);
+            } // Despues se pondra la animacion de ataque con pistola o arma
         }
     }
 
