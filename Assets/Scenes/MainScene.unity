@@ -93221,7 +93221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1887679152}
-  numEnemies: 0
+  numEnemies: 10
 --- !u!4 &1428521840
 Transform:
   m_ObjectHideFlags: 0
