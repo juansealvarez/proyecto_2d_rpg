@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform hitBox;
     private bool usingSword = true;
     public GameObject SwordGUI;
-    public GameObject GunGUI;
+    public GameObject Sword2GUI;
 
     private void Start()
     {
@@ -62,11 +62,11 @@ public class PlayerMovement : MonoBehaviour
         if (usingSword)
         {
             SwordGUI.gameObject.SetActive(true);
-            GunGUI.gameObject.SetActive(false);
+            Sword2GUI.gameObject.SetActive(false);
         }else
         {
             SwordGUI.gameObject.SetActive(false);
-            GunGUI.gameObject.SetActive(true);
+            Sword2GUI.gameObject.SetActive(true);
         }
     }
 
@@ -106,7 +106,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 mAnimator.SetTrigger("Attack");
                 hitBox.gameObject.SetActive(true);
-            } // Despues se pondra la animacion de ataque con pistola o arma
+            } else
+            {
+                mAnimator.SetTrigger("Attack2");
+                hitBox.gameObject.SetActive(true);
+            }
         }
     }
 

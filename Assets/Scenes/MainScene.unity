@@ -56889,17 +56889,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371778048}
-  m_LocalRotation: {x: -0, y: -0, z: 0.44140634, w: 0.89730734}
+  m_LocalRotation: {x: -0, y: -0, z: 0.6880095, w: 0.72570175}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2036411001}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 52.387}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 86.945}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5.100006, y: -2.300003}
+  m_AnchoredPosition: {x: 1.2999878, y: 0}
   m_SizeDelta: {x: -11.6886, y: -11.5603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371778050
@@ -56915,14 +56915,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
+  m_Color: {r: 0.5188679, g: 0, b: 0.4404686, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 49dad913fe641dc40ae67af2f261ae43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e6b5b0880d5ac34a97d2fdc8db8f14a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -92183,7 +92183,7 @@ GameObject:
   - component: {fileID: 656215955}
   - component: {fileID: 656215954}
   m_Layer: 5
-  m_Name: Gun
+  m_Name: Sword2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92283,7 +92283,7 @@ GameObject:
   - component: {fileID: 657334234}
   - component: {fileID: 657334233}
   m_Layer: 5
-  m_Name: GunImage
+  m_Name: Sowrd2Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94446,17 +94446,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753277649}
-  m_LocalRotation: {x: -0, y: -0, z: -0.3117507, w: 0.9501639}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0038490808, w: 0.9999926}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 657334232}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -36.33}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.441}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.7999878, y: -3.399994}
+  m_AnchoredPosition: {x: 0, y: -0.3999939}
   m_SizeDelta: {x: -11.6886, y: -11.5603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753277651
@@ -94472,14 +94472,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.78845596, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 49dad913fe641dc40ae67af2f261ae43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e6b5b0880d5ac34a97d2fdc8db8f14a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -102204,7 +102204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 282.8, y: -125.8}
+  m_AnchoredPosition: {x: 279.8, y: -113}
   m_SizeDelta: {x: -662.5077, y: -349.6667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814446687
@@ -102611,7 +102611,7 @@ GameObject:
   - component: {fileID: 2036411003}
   - component: {fileID: 2036411002}
   m_Layer: 5
-  m_Name: GunImageBlocked
+  m_Name: Sword2ImageBlocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102758,6 +102758,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7055247541755875536, guid: cb88262dbcb9f624d944d8b8b64a9b3b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7055247542396394048, guid: cb88262dbcb9f624d944d8b8b64a9b3b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -102774,6 +102778,10 @@ PrefabInstance:
       propertyPath: SwordGUI
       value: 
       objectReference: {fileID: 2003064408}
+    - target: {fileID: 7055247542396394076, guid: cb88262dbcb9f624d944d8b8b64a9b3b, type: 3}
+      propertyPath: Sword2GUI
+      value: 
+      objectReference: {fileID: 656215953}
     - target: {fileID: 7055247542396394078, guid: cb88262dbcb9f624d944d8b8b64a9b3b, type: 3}
       propertyPath: m_RootOrder
       value: 4
