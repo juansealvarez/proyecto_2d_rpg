@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { private set; get; }
     public event EventHandler OnPlayerDamage;
     public event EventHandler OnEnemyDamage;
-    public event EventHandler OnPlayerDied;
     public float PlayerHealth = 100f;
+    
 
     private void Awake()
     {
@@ -56,13 +56,12 @@ public class GameManager : MonoBehaviour
         OnPlayerDamage?.Invoke(this, EventArgs.Empty);
         if (PlayerHealth <= 0f)
         {
-            OnPlayerDied?.Invoke(this, EventArgs.Empty);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
     public void EnemyDamage()
-    {
+    {        
         OnEnemyDamage?.Invoke(this, EventArgs.Empty);
     }
 }

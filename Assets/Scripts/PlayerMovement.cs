@@ -10,17 +10,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed = 4f;
 
+    public static PlayerMovement Instance { private set; get; }
+
     private Rigidbody2D mRb;
     private Vector3 mDirection = Vector3.zero;
     private Animator mAnimator;
     private PlayerInput mPlayerInput;
     private Transform hitBox;
-    private bool usingSword = true; //bool de sword1
+    public static bool usingSword = true; //bool de sword1
     public GameObject SwordGUI;
     public GameObject Sword2GUI;
     public float CooldownInicial = 10f;
+    public float CooldownInicialSword1 = 1f;
 
     private float Cooldown = 0f;
+    private float CooldownSword1 = 0f;
 
     private void Start()
     {
@@ -71,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
             Sword2GUI.gameObject.SetActive(true);
         }
         Cooldown -= Time.deltaTime;
+        CooldownSword1 -= Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -107,8 +112,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (usingSword)
             {
-                mAnimator.SetTrigger("Attack");
-                hitBox.gameObject.SetActive(true);
+                if(CooldownSword1 <= 0){
+                    mAnimator.SetTrigger("Attack");
+                    hitBox.gameObject.SetActive(true);
+                    CooldownSword1 = CooldownInicialSword1;
+                }
             } else
             {
                 if (Cooldown <= 0)

@@ -8,7 +8,6 @@ public class EnemyShooting : MonoBehaviour
     {
         if(col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player entered the weapon zone");
             GameManager.Instance.PlayerDamage();
         }
     }

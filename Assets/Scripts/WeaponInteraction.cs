@@ -8,7 +8,6 @@ public class WeaponInteraction : MonoBehaviour
     {
         if(col.gameObject.CompareTag("enemy"))
         {
-            Debug.Log("Enemy entered the weapon zone");
             GameManager.Instance.EnemyDamage();
         }
     }
