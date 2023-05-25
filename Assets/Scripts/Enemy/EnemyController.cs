@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyController : MonoBehaviour
@@ -38,6 +39,12 @@ public class EnemyController : MonoBehaviour
         // Creo la maquina de estados finita
         mFSM = new FSM<EnemyController>(new Enemy.IdleState(this));
         mFSM.Begin(); // prendo la maquina de estados
+        GameManager.Instance.OnEnemyDamage += OnEnemyDamageDelegate;
+    }
+
+    private void OnEnemyDamageDelegate(object sender, EventArgs e)
+    {
+        
     }
 
     private void FixedUpdate()
