@@ -41,7 +41,6 @@ public class EnemyController : MonoBehaviour
         // Creo la maquina de estados finita
         mFSM = new FSM<EnemyController>(new Enemy.IdleState(this));
         mFSM.Begin(); // prendo la maquina de estados
-        GameManager.Instance.OnEnemyDamage += OnEnemyDamageDelegate;
     }
 
     
@@ -60,11 +59,8 @@ public class EnemyController : MonoBehaviour
         {
             Debug.Log("Enemigo Abatido");
             Destroy(this.gameObject); // El problema es que se aplica a todos los enemigos
+            GameManager.Instance.EnemyKilled();
         }
-    }
-    private void OnEnemyDamageDelegate(object sender, EventArgs e)
-    {
-        throw new NotImplementedException();
     }
 
     private void FixedUpdate()

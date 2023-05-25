@@ -8,8 +8,8 @@ public class WeaponInteraction : MonoBehaviour
     {
         if(col.CompareTag("enemy"))
         {
-            GameManager.Instance.EnemyDamage();
             col.GetComponent<EnemyController>().damaged();
+            
         }
     }
 }

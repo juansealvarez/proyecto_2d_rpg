@@ -8,10 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public Transform Player;
     public int numEnemies = 5;
-
     public static GameManager Instance { private set; get; }
     public event EventHandler OnPlayerDamage;
-    public event EventHandler OnEnemyDamage;
+    public event EventHandler AllGone;
     public float PlayerHealth = 100f;
     
 
@@ -60,8 +59,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnemyDamage()
-    {        
-        OnEnemyDamage?.Invoke(this, EventArgs.Empty);
+    public void EnemyKilled()
+    {   
+        numEnemies--;
+        if(numEnemies==0){
+            Debug.Log("Todos los enemigos han sido abatidos");
+            AllGone?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
