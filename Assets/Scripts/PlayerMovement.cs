@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator mAnimator;
     private PlayerInput mPlayerInput;
     private Transform hitBox;
-    private bool usingSword = true;
+    private bool usingSword = true; //bool de sword1
     public GameObject SwordGUI;
     public GameObject Sword2GUI;
 
@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
         hitBox = transform.Find("HitBox");
 
         ConversationManager.Instance.OnConversationStop += OnConversationStopDelegate;
-        //inicializar SwordGUI y GunGUI
     }
 
     private void OnConversationStopDelegate()
