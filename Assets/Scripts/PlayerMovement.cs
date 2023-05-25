@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private bool usingSword = true; //bool de sword1
     public GameObject SwordGUI;
     public GameObject Sword2GUI;
+    public float CooldownInicial = 10f;
+
+    private float Cooldown = 0f;
 
     private void Start()
     {
@@ -67,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
             SwordGUI.gameObject.SetActive(false);
             Sword2GUI.gameObject.SetActive(true);
         }
+        Cooldown -= Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -107,8 +111,12 @@ public class PlayerMovement : MonoBehaviour
                 hitBox.gameObject.SetActive(true);
             } else
             {
-                mAnimator.SetTrigger("Attack2");
-                hitBox.gameObject.SetActive(true);
+                if (Cooldown <= 0)
+                {
+                    mAnimator.SetTrigger("Attack2");
+                    hitBox.gameObject.SetActive(true);
+                    Cooldown = CooldownInicial;
+                }
             }
         }
     }
