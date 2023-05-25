@@ -212,6 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  SwordGUI: {fileID: 0}
+  Sword2GUI: {fileID: 0}
 --- !u!70 &7055247542396394074
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
