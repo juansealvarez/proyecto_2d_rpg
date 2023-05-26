@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace Boss
 {
+
     public class AttackingState : FSMState<BossController>
     {
+        public int attackCount = 0;
         public AttackingState(BossController controller) : base(controller)
         {
             Transitions.Add(new FSMTransition<BossController>(
@@ -16,6 +18,12 @@ namespace Boss
 
         public override void OnEnter()
         {
+            // attackCount += 1;
+            // if (attackCount == 5)
+            // {
+            //     OnTimeToSpecialAttack();
+            //     attackCount = 0;
+            // }
             Debug.Log("OnEnter BossAttackingState");
             mController.animator.SetTrigger("Attack");
             mController.hitBox.gameObject.SetActive(true);
@@ -27,6 +35,7 @@ namespace Boss
             mController.animator.SetTrigger("Attack");
             mController.hitBox.gameObject.SetActive(true);
         }
+
 
         public override void OnUpdate(float deltaTime)
         {
