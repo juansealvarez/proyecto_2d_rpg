@@ -38492,7 +38492,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &596309546
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111106,7 +111105,7 @@ Animator:
   m_GameObject: {fileID: 8070509648542355564}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: edb65fe9437247d49a859ce92892b312, type: 2}
+  m_Controller: {fileID: 9100000, guid: e7419a7e2cf624d4897e2005bcdca398, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -111116,7 +111115,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8070509648542355564
 GameObject:
   m_ObjectHideFlags: 0
