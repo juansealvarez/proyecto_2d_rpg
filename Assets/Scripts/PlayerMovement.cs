@@ -23,8 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public static float CooldownInicial = 10f;
     public static float CooldownInicialSword1 = 1f;
 
-    public static float Cooldown {private set; get;} = 0f;
-    public static float CooldownSword1 {private set; get;} = 0f;
+    public static float Cooldown { private set; get; } = 0f;
+    public static float CooldownSword1 { private set; get; } = 0f;
 
     private void Start()
     {
@@ -49,13 +49,14 @@ public class PlayerMovement : MonoBehaviour
             mAnimator.SetFloat("Horizontal", mDirection.x);
             mAnimator.SetFloat("Vertical", mDirection.y);
             mAnimator.SetBool("IsMoving", true);
-        }else
+        }
+        else
         {
             // Quieto
             mAnimator.SetBool("IsMoving", false);
         }
-        
-        if(Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl))
+
+        if (Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl))
         {
             usingSword = !usingSword;
         }
@@ -64,7 +65,8 @@ public class PlayerMovement : MonoBehaviour
         {
             SwordGUI.gameObject.SetActive(true);
             Sword2GUI.gameObject.SetActive(false);
-        }else
+        }
+        else
         {
             SwordGUI.gameObject.SetActive(false);
             Sword2GUI.gameObject.SetActive(true);
@@ -114,7 +116,8 @@ public class PlayerMovement : MonoBehaviour
                     CooldownSword1 = CooldownInicialSword1;
                     GameManager.Instance.PlayerAttackSW();
                 }
-            } else
+            }
+            else
             {
                 if (Cooldown <= 0)
                 {

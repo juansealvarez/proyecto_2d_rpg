@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public event EventHandler OnPlayerAttackSW;
     public event EventHandler AllGone;
     private float PlayerHealth = 100f;
-    
+
 
     private void Awake()
     {
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         var enemyToInstantiate = Resources.Load<GameObject>("EnemyNPC");
 
-        for (int i=0; i < numEnemies; i++)
+        for (int i = 0; i < numEnemies; i++)
         {
             var instanciatePosition = new Vector3(
                 UnityEngine.Random.Range(-12f, 13f),
@@ -51,11 +51,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PlayerAttackSW2(){
+    public void PlayerAttackSW2()
+    {
         OnPlayerAttackSW2?.Invoke(this, EventArgs.Empty);
     }
 
-    public void PlayerAttackSW(){
+    public void PlayerAttackSW()
+    {
         OnPlayerAttackSW?.Invoke(this, EventArgs.Empty);
     }
 
@@ -70,9 +72,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void EnemyKilled()
-    {   
+    {
         numEnemies--;
-        if(numEnemies==0){
+        if (numEnemies == 0)
+        {
             Debug.Log("Todos los enemigos han sido abatidos");
             AllGone?.Invoke(this, EventArgs.Empty);
         }

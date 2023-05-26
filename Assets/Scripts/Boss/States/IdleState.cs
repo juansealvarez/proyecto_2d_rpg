@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemy
+namespace Boss
 {
-    public class IdleState : FSMState<EnemyController>
+    public class IdleState : FSMState<BossController>
     {
-        public IdleState(EnemyController controller) : base(controller)
+        public IdleState(BossController controller) : base(controller)
         {
             // Transiciones
-            Transitions.Add(new FSMTransition<EnemyController>(
+            Transitions.Add(new FSMTransition<BossController>(
                 isValid: () =>
                 {
                     return Vector3.Distance(
@@ -23,7 +23,7 @@ namespace Enemy
                 }
             ));
 
-            Transitions.Add(new FSMTransition<EnemyController>(
+            Transitions.Add(new FSMTransition<BossController>(
                 isValid: () =>
                 {
                     return Vector3.Distance(
@@ -43,6 +43,7 @@ namespace Enemy
             Debug.Log("OnEnter IdleState");
             mController.animator.SetBool("IsMoving", false);
             mController.AttackingEnd = false;
+            mController.SpecialAttackEnd = false;
         }
 
         public override void OnExit()
@@ -56,4 +57,3 @@ namespace Enemy
         }
     }
 }
-

@@ -2,21 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemy
+namespace Boss
 {
-    public class AttackingState : FSMState<EnemyController>
+    public class AttackingState : FSMState<BossController>
     {
-        public AttackingState(EnemyController controller) : base(controller)
+        public AttackingState(BossController controller) : base(controller)
         {
-            Transitions.Add(new FSMTransition<EnemyController>(
-                isValid: () =>
-                {
-                    return mController.AttackingEnd;
-                },
-                getNextState: () =>
-                {
-                    return new IdleState(mController);
-                }
+            Transitions.Add(new FSMTransition<BossController>(
+                isValid: () => mController.AttackingEnd,
+                getNextState: () => new IdleState(mController)
             ));
         }
 
@@ -39,4 +33,3 @@ namespace Enemy
         }
     }
 }
-

@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
 
     #region Components
     public Transform Player;
-    public SpriteRenderer spriteRenderer {private set; get; }
+    public SpriteRenderer spriteRenderer { private set; get; }
     public Rigidbody2D rb { private set; get; }
     public Animator animator { private set; get; }
 
@@ -43,13 +43,15 @@ public class EnemyController : MonoBehaviour
         mFSM.Begin(); // prendo la maquina de estados
     }
 
-    
-    public void damaged(){
+
+    public void damaged()
+    {
         if (PlayerMovement.usingSword)
         {
-            EnemyHealth -= 1f; 
+            EnemyHealth -= 1f;
             Debug.Log("-1 de vida");
-        }else
+        }
+        else
         {
             EnemyHealth -= 2f;
             Debug.Log("-2 de vida");
@@ -68,7 +70,7 @@ public class EnemyController : MonoBehaviour
         mFSM.Tick(Time.deltaTime);
     }
 
-    public void SetAttackingEnd ()
+    public void SetAttackingEnd()
     {
         AttackingEnd = true;
     }
