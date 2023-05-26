@@ -7,6 +7,7 @@ namespace Boss
 
     public class AttackingState : FSMState<BossController>
     {
+
         public int attackCount = 0;
         public AttackingState(BossController controller) : base(controller)
         {
@@ -18,15 +19,20 @@ namespace Boss
 
         public override void OnEnter()
         {
-            // attackCount += 1;
-            // if (attackCount == 5)
-            // {
-            //     OnTimeToSpecialAttack();
-            //     attackCount = 0;
-            // }
+
             Debug.Log("OnEnter BossAttackingState");
-            mController.animator.SetTrigger("Attack");
-            mController.hitBox.gameObject.SetActive(true);
+            if (attackCount == 10)
+            {
+                mController.animator.SetTrigger("Attack2");
+                mController.hitBox.gameObject.SetActive(true);
+                attackCount = 0;
+            }
+            else
+            {
+                mController.animator.SetTrigger("Attack");
+                mController.hitBox.gameObject.SetActive(true);
+                attackCount++;
+            }
         }
 
         public override void OnExit()
