@@ -34332,8 +34332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.8857, y: 107}
-  m_SizeDelta: {x: 688.0072, y: 48.5996}
+  m_AnchoredPosition: {x: -54.85024, y: -161}
+  m_SizeDelta: {x: 580.0781, y: 48.5996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &681048513
 MonoBehaviour:
@@ -43829,7 +43829,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -100347,8 +100347,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.8847, y: 106.85}
-  m_SizeDelta: {x: 674.7776, y: 48.3}
+  m_AnchoredPosition: {x: -54.292934, y: -160}
+  m_SizeDelta: {x: 567.9612, y: 48.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490378136
 MonoBehaviour:
@@ -101264,7 +101264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1788388471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101999,11 +101999,11 @@ GameObject:
   - component: {fileID: 2009197044}
   m_Layer: 0
   m_Name: BossNPC
-  m_TagString: enemy
+  m_TagString: boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &8070509648542355566
 SpriteRenderer:
   m_ObjectHideFlags: 0
