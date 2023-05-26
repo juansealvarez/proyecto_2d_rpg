@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int numEnemies = 5;
     public static GameManager Instance { private set; get; }
     public event EventHandler OnPlayerDamage;
+    public event EventHandler OnPlayerAttackSW2;
     public event EventHandler AllGone;
     private float PlayerHealth = 100f;
     
@@ -47,6 +48,10 @@ public class GameManager : MonoBehaviour
             var enemy = Instantiate(enemyToInstantiate, instanciatePosition, Quaternion.identity);
             enemy.GetComponent<EnemyController>().Player = Player;
         }
+    }
+
+    public void PlayerAttackSW2(){
+        OnPlayerAttackSW2?.Invoke(this, EventArgs.Empty);
     }
 
     public void PlayerDamage()

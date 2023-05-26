@@ -20,10 +20,10 @@ public class PlayerMovement : MonoBehaviour
     public static bool usingSword = true; //bool de sword1
     public GameObject SwordGUI;
     public GameObject Sword2GUI;
-    public float CooldownInicial = 10f;
-    public float CooldownInicialSword1 = 1f;
+    public static float CooldownInicial = 10f;
+    public static float CooldownInicialSword1 = 1f;
 
-    private float Cooldown = 0f;
+    public static float Cooldown {private set; get;} = 0f;
     private float CooldownSword1 = 0f;
 
     private void Start()
@@ -57,12 +57,7 @@ public class PlayerMovement : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.LeftControl))
         {
-            if (usingSword){
-                usingSword = false;
-            }else
-            {
-                usingSword = true;
-            }
+            usingSword = !usingSword;
         }
 
         if (usingSword)
@@ -112,7 +107,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (usingSword)
             {
-                if(CooldownSword1 <= 0){
+                if (CooldownSword1 <= 0)
+                {
                     mAnimator.SetTrigger("Attack");
                     hitBox.gameObject.SetActive(true);
                     CooldownSword1 = CooldownInicialSword1;
@@ -124,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
                     mAnimator.SetTrigger("Attack2");
                     hitBox.gameObject.SetActive(true);
                     Cooldown = CooldownInicial;
+                    GameManager.Instance.PlayerAttackSW2();
                 }
             }
         }
