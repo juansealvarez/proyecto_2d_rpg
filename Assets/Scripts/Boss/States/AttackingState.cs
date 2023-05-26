@@ -21,7 +21,7 @@ namespace Boss
         {
 
             Debug.Log("OnEnter BossAttackingState");
-            if (attackCount == 10)
+            if (attackCount == 5)
             {
                 mController.animator.SetTrigger("Attack2");
                 mController.hitBox.gameObject.SetActive(true);
