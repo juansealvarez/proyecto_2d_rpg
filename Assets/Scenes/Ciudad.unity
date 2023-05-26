@@ -110581,6 +110581,7 @@ GameObject:
   - component: {fileID: 1490378138}
   - component: {fileID: 1490378137}
   - component: {fileID: 1490378136}
+  - component: {fileID: 1490378139}
   m_Layer: 5
   m_Name: Vida
   m_TagString: Untagged
@@ -110698,6 +110699,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490378134}
   m_CullTransparentMesh: 1
+--- !u!114 &1490378139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490378134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2070994f40b459d498ddca817f1f5aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1541636262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110945,7 +110958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1541636263}
-  numEnemies: 5
+  numEnemies: 0
 --- !u!4 &1549448106
 Transform:
   m_ObjectHideFlags: 0
@@ -111646,7 +111659,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1788388470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2070994f40b459d498ddca817f1f5aca, type: 3}
+  m_Script: {fileID: 11500000, guid: 28e371668338f38479711f774ad3b038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1815374913
@@ -112142,12 +112155,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40331472691abb949939d9fcea0ea521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   WakeDistance: 10
   Speed: 3
   AttackDistance: 2
   SpecialAttackDistance: 5
   BossHealth: 10
   Player: {fileID: 0}
+=======
+  WakeDistance: 5
+  Speed: 2
+  AttackDistance: 1
+  EnemyHealth: 15
+  Player: {fileID: 1541636263}
+>>>>>>> 2ee0d6f5bb8ce0f2c02d7adbe458c8d8ff9370f5
 --- !u!1 &2026093278
 GameObject:
   m_ObjectHideFlags: 0
@@ -112643,22 +112664,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!70 &8070509648542355555
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8070509648542355564}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00000069555716, y: -0.08475577}
-  m_Size: {x: 0.48802418, y: 0.26006335}
-  m_Direction: 1
 --- !u!1 &8070509648542355564
 GameObject:
   m_ObjectHideFlags: 0
@@ -112671,8 +112676,8 @@ GameObject:
   - component: {fileID: 8070509648542355566}
   - component: {fileID: 8070509648542355553}
   - component: {fileID: 8070509648542355554}
-  - component: {fileID: 8070509648542355555}
   - component: {fileID: 2009197044}
+  - component: {fileID: 8070509648542355568}
   m_Layer: 0
   m_Name: BossNPC
   m_TagString: boss
@@ -112748,6 +112753,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &8070509648542355568
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070509648542355564}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.052247375}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8181018}
+  m_EdgeRadius: 0
 --- !u!1 &8070509650260385801
 GameObject:
   m_ObjectHideFlags: 0
