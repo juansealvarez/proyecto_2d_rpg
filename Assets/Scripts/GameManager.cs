@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public event EventHandler OnPlayerAttackSW2;
     public event EventHandler OnPlayerAttackSW;
     public event EventHandler AllGone;
+    public event EventHandler OnBossKilled;
+    public event EventHandler OnBossDamage;
     private float PlayerHealth = 100f;
 
 
@@ -79,5 +81,17 @@ public class GameManager : MonoBehaviour
             Debug.Log("Todos los enemigos han sido abatidos");
             AllGone?.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    public void BossKilled()
+    {
+        Debug.Log("Jefe abatido");
+        OnBossKilled?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void BossDamage()
+    {
+        Debug.Log("Jefe dañado");
+        OnBossDamage?.Invoke(this, EventArgs.Empty);
     }
 }

@@ -12,7 +12,7 @@ public class BossController : MonoBehaviour
     public float Speed = 2f;
     public float AttackDistance = 1f;
 
-    public float EnemyHealth = 2f;
+    public float EnemyHealth = 10f;
 
     #endregion
 
@@ -68,5 +68,26 @@ public class BossController : MonoBehaviour
     public void SetAttackingEnd()
     {
         AttackingEnd = true;
+    }
+
+    public void damaged()
+    {
+        if (PlayerMovement.usingSword)
+        {
+            EnemyHealth -= 1f;
+            Debug.Log("-1 de vida");
+        }
+        else
+        {
+            EnemyHealth -= 2f;
+            Debug.Log("-2 de vida");
+        }
+
+        if (EnemyHealth <= 0f)
+        {
+            Debug.Log("Boss Abatido");
+            Destroy(this.gameObject);
+            GameManager.Instance.BossKilled();
+        }
     }
 }

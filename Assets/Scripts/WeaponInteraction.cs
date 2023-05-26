@@ -11,5 +11,11 @@ public class WeaponInteraction : MonoBehaviour
             col.GetComponent<EnemyController>().damaged();
             
         }
+
+        if(col.CompareTag("boss"))
+        {
+            col.GetComponent<BossController>().damaged();
+            GameManager.Instance.BossDamage();
+        }
     }
 }

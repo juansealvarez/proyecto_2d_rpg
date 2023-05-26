@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
-
 public class BossHealthbarUI : MonoBehaviour
 {
+    private Slider mSlider;
     private void Start()
     {
-        this.gameObject.SetActive(false);
-        GameManager.Instance.AllGone += AllGoneDelegate;
+        mSlider = GetComponent<Slider>();
+        GameManager.Instance.OnBossDamage += OnBossDamageDelegate;
     }
-    
-    private void AllGoneDelegate(object sender, EventArgs e)
+    private void OnBossDamageDelegate(object sender, EventArgs e)
     {
-        this.gameObject.SetActive(true);
+        if (PlayerMovement.usingSword)
+        {
+            mSlider.value -= 1f;
+        }else
+        {
+            mSlider.value -= 2f;
+        }
     }
 }
