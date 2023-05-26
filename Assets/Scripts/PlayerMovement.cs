@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public static float CooldownInicialSword1 = 1f;
 
     public static float Cooldown {private set; get;} = 0f;
-    private float CooldownSword1 = 0f;
+    public static float CooldownSword1 {private set; get;} = 0f;
 
     private void Start()
     {
