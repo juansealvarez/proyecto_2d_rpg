@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     public float Speed = 2f;
     public float AttackDistance = 1f;
 
-    public float EnemyHealth = 4f;
+    public float EnemyHealth = 2f;
 
     #endregion
 
