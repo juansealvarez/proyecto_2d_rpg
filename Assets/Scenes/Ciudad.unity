@@ -100572,8 +100572,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1752089441881594433, guid: cb88262dbcb9f624d944d8b8b64a9b3b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb88262dbcb9f624d944d8b8b64a9b3b, type: 3}
 --- !u!4 &1541636263 stripped
 Transform:
@@ -102109,7 +102108,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!70 &8070509648542355555
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
