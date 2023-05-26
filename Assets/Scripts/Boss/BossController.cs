@@ -68,6 +68,7 @@ public class BossController : MonoBehaviour
     public void SetAttackingEnd()
     {
         AttackingEnd = true;
+        Debug.Log("attack end");
     }
 
     public void damaged()
