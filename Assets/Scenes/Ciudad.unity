@@ -112155,20 +112155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40331472691abb949939d9fcea0ea521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   WakeDistance: 10
   Speed: 3
   AttackDistance: 2
   SpecialAttackDistance: 5
   BossHealth: 10
   Player: {fileID: 0}
-=======
-  WakeDistance: 5
-  Speed: 2
-  AttackDistance: 1
-  EnemyHealth: 15
-  Player: {fileID: 1541636263}
->>>>>>> 2ee0d6f5bb8ce0f2c02d7adbe458c8d8ff9370f5
 --- !u!1 &2026093278
 GameObject:
   m_ObjectHideFlags: 0
