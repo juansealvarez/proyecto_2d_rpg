@@ -32,6 +32,7 @@ namespace Boss
                 mController.animator.SetTrigger("Attack");
                 mController.hitBox.gameObject.SetActive(true);
                 attackCount++;
+                Debug.Log("AttackCount: " + attackCount);
             }
         }
 
