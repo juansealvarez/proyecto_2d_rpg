@@ -9,7 +9,7 @@ namespace Boss
         public IdleState(BossController controller) : base(controller)
         {
             // Transiciones
-            Transitions.Add(new FSMTransition<BossController>(
+            /*Transitions.Add(new FSMTransition<BossController>(
                 isValid: () =>
                 {
                     return Vector3.Distance(
@@ -21,7 +21,7 @@ namespace Boss
                 {
                     return new MovingState(mController);
                 }
-            ));
+            ));*/
 
             Transitions.Add(new FSMTransition<BossController>(
                 isValid: () =>
@@ -40,15 +40,14 @@ namespace Boss
 
         public override void OnEnter()
         {
-            Debug.Log("OnEnter IdleState");
+            Debug.Log("OnEnter BoosIdleState");
             mController.animator.SetBool("IsMoving", false);
             mController.AttackingEnd = false;
-            mController.SpecialAttackEnd = false;
         }
 
         public override void OnExit()
         {
-            Debug.Log("OnExit IdleState");
+            Debug.Log("OnExit BossIdleState");
         }
 
         public override void OnUpdate(float deltaTime)

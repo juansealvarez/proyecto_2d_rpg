@@ -20,22 +20,17 @@ namespace Boss
                 isValid: () => Vector3.Distance(mController.transform.position, mController.Player.transform.position) <= mController.AttackDistance,
                 getNextState: () => new AttackingState(mController)
             ));
-
-            Transitions.Add(new FSMTransition<BossController>(
-                isValid: () => Vector3.Distance(mController.transform.position, mController.Player.transform.position) <= mController.SpecialAttackDistance,
-                getNextState: () => new SpecialAttackState(mController)
-            ));
         }
 
         public override void OnEnter()
         {
-            Debug.Log("OnEnter MovingState");
+            Debug.Log("OnEnter BossMovingState");
             mController.animator.SetBool("IsMoving", true);
         }
 
         public override void OnExit()
         {
-            Debug.Log("OnExit MovingState");
+            Debug.Log("OnExit BossMovingState");
         }
 
         public override void OnUpdate(float deltaTime)

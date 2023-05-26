@@ -8,11 +8,12 @@ using Boss;
 public class BossController : MonoBehaviour
 {
     #region Public Properties
-    public float WakeDistance = 10f;
-    public float Speed = 3f;
-    public float AttackDistance = 2f;
-    public float SpecialAttackDistance = 5f;
-    public float BossHealth = 10f;
+    public float WakeDistance = 5f;
+    public float Speed = 2f;
+    public float AttackDistance = 1f;
+
+    public float EnemyHealth = 2f;
+
     #endregion
 
     #region Components
@@ -22,20 +23,19 @@ public class BossController : MonoBehaviour
     public Animator animator { private set; get; }
 
     public bool AttackingEnd { set; get; } = false;
-    public bool SpecialAttackEnd { set; get; } = false;
     public Transform hitBox { private set; get; }
-    public Transform specialAttackHitBox { private set; get; }
+
     #endregion
 
     #region Private Properties
     private FSM<BossController> mFSM;
-    private FSMState<BossController> mCurrentState;
+
     #endregion
 
     private void Start()
     {
         // Se obtiene el BOss
-        Player = GameObject.FindWithTag("Player").transform;
+        //Player = GameObject.FindWithTag("Player").transform;
 
         Debug.Log("Jege inicializado correctamente");
 
@@ -60,19 +60,13 @@ public class BossController : MonoBehaviour
         // this.transform.position = Player.transform.position + Vector3.one * (WakeDistance + 1);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        mCurrentState?.OnUpdate(Time.deltaTime);
+        mFSM.Tick(Time.deltaTime);
     }
 
-    private void ChangeState(FSMState<BossController> newState)
+    public void SetAttackingEnd()
     {
-        if (mCurrentState != null)
-            mCurrentState.OnExit();
-
-        mCurrentState = newState;
-
-        if (mCurrentState != null)
-            mCurrentState.OnEnter();
+        AttackingEnd = true;
     }
 }

@@ -16,15 +16,16 @@ namespace Boss
 
         public override void OnEnter()
         {
-            Debug.Log("OnEnter AttackingState");
+            Debug.Log("OnEnter BossAttackingState");
             mController.animator.SetTrigger("Attack");
             mController.hitBox.gameObject.SetActive(true);
         }
 
         public override void OnExit()
         {
-            Debug.Log("OnExit AttackingState");
-            mController.hitBox.gameObject.SetActive(false);
+            Debug.Log("OnExit BossAttackingState");
+            mController.animator.SetTrigger("Attack");
+            mController.hitBox.gameObject.SetActive(true);
         }
 
         public override void OnUpdate(float deltaTime)
