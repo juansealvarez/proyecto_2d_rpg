@@ -112,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
                     mAnimator.SetTrigger("Attack");
                     hitBox.gameObject.SetActive(true);
                     CooldownSword1 = CooldownInicialSword1;
+                    GameManager.Instance.PlayerAttackSW();
                 }
             } else
             {

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { private set; get; }
     public event EventHandler OnPlayerDamage;
     public event EventHandler OnPlayerAttackSW2;
+    public event EventHandler OnPlayerAttackSW;
     public event EventHandler AllGone;
     private float PlayerHealth = 100f;
     
@@ -52,6 +53,10 @@ public class GameManager : MonoBehaviour
 
     public void PlayerAttackSW2(){
         OnPlayerAttackSW2?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void PlayerAttackSW(){
+        OnPlayerAttackSW?.Invoke(this, EventArgs.Empty);
     }
 
     public void PlayerDamage()

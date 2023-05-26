@@ -14,7 +14,7 @@ public class CooldownSWUI : MonoBehaviour
     {
         mSlider = GetComponent<Slider>();
         mSlider.value = 0f;
-        GameManager.Instance.OnPlayerAttackSW2 += OnPlayerAttackDelegate;
+        GameManager.Instance.OnPlayerAttackSW += OnPlayerAttackDelegate;
     }
 
     private void OnPlayerAttackDelegate(object sender, EventArgs e)
