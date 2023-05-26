@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerHealth < 100f)
         {
-            PlayerHealth += 0.1f;
+            PlayerHealth += 0.05f;
         }
     }
 

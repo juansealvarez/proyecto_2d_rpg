@@ -17,7 +17,7 @@ public class HealthbarUI : MonoBehaviour
     {
         if (mSlider.value < 100f)
         {
-            mSlider.value += 0.1f;
+            mSlider.value += 0.05f;
         }
     }
 
